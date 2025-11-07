@@ -4,21 +4,39 @@ namespace SecureCompression.Tests;
 
 public class SecureCompressorTests
 {
+    private string testDirectory = AppDomain.CurrentDomain.BaseDirectory;
+    private List<string> _inputFiles = new List<string>
+    {
+        Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"testfile1.txt"),
+        Path.Combine(AppDomain.CurrentDomain.BaseDirectory,"testfile2.txt"),
+    };
+
     [SetUp]
     public void Setup()
     {
-        var testfile1 = File.Create("testfile1.txt");
-        var testfile2 = File.Create("testfile2.txt");
+        foreach (var file in _inputFiles)
+        {
+            if (!File.Exists(file))
+            {
+                File.WriteAllText(file, "This is a test file for SecureCompressor unit tests.");
+            }
+        }
     }
 
     [Test]
-    public void CompressFilesTest()
+    public void RoundtripTest()
     {
+        var workingDir = Path.GetTempPath();
+        var inputFiles = new List<string>
+        {
+            Path.Combine(workingDir,"input","testfile1.txt"),
+            Path.Combine(workingDir,"input","testfile2.txt"),
+        };
         var compressor = new SecureCompressor();
-        var filesToCompress = new List<string> { "testfile1.txt", "testfile2.txt" };
-        var destinationPath = "CompressedFiles.zip";
+        var compressedFile = Path.Combine(workingDir, "output", "CompressedFiles.zip");
         var encryptionKey = Guid.NewGuid().ToString();
 
-        Assert.DoesNotThrow(() => compressor.CompressFiles(filesToCompress, destinationPath, encryptionKey));
+        Assert.DoesNotThrow(() => compressor.CompressFiles(inputFiles, compressedFile, encryptionKey));
+        Assert.DoesNotThrow(() => compressor.DecompressFiles(compressedFile, Path.Combine(workingDir, "output","decompressed"), encryptionKey));
     }
 }

@@ -2,9 +2,8 @@
 
 public class SecureCompressor
 {
-    public void CompressFiles(List<string> filePaths, string destinationPath, string encryptionKey)
+    public void CompressFiles(List<string> filePaths, string destinationfilePath, string encryptionKey)
     {
-        // Implementation for secure compression
     }
 
     public void DecompressFiles(string compressedFilePath, string destinationPath, string encryptionKey)
