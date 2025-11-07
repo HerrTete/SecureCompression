@@ -1,0 +1,30 @@
+﻿Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.5.2.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureCompression", "SecureCompression\SecureCompression.csproj", "{EFDC4ECF-242D-47F1-9630-3C35691678A2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecureCompression.Tests", "SecureCompression.Tests\SecureCompression.Tests.csproj", "{CFB68EF1-5420-4BA2-84F4-D62211411207}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{EFDC4ECF-242D-47F1-9630-3C35691678A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EFDC4ECF-242D-47F1-9630-3C35691678A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EFDC4ECF-242D-47F1-9630-3C35691678A2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EFDC4ECF-242D-47F1-9630-3C35691678A2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CFB68EF1-5420-4BA2-84F4-D62211411207}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CFB68EF1-5420-4BA2-84F4-D62211411207}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CFB68EF1-5420-4BA2-84F4-D62211411207}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CFB68EF1-5420-4BA2-84F4-D62211411207}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {DA09EC2D-58EC-4E8A-BFDE-62799C0B6F4F}
+	EndGlobalSection
+EndGlobal
